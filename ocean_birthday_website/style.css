@@ -1,0 +1,223 @@
+/* Classic Rainbow & Glassmorphism Design */
+
+body {
+    /* Fallback background jar video load nahi jhala tar rainbow disel */
+    background: linear-gradient(45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb, #e0c3fc, #8ec5fc);
+    background-size: 300% 300%;
+    animation: rainbowBG 12s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    color: #333; 
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+@keyframes rainbowBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Background Video Styling (Zoom fix) */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+    object-fit: cover;
+    object-position: center; /* Video ekdam center madhe thevel */
+    filter: brightness(0.7); /* Thoda dark thevlay mhanje text disel */
+}
+#main-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10; /* Content la video chya pudhe gheun yete */
+}
+
+/* Glass effect for main sections */
+#main-container > div {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Hide sections that are not active yet */
+.hidden {
+    display: none !important;
+}
+
+#main-container > div.active {
+    display: block;
+}
+
+/* Fonts */
+h1, h2, .ocean-title, .ocean-wishes {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
+}
+
+.ocean-title { font-size: 3.5em; margin-bottom: 5px; }
+.ocean-subtitle, p { font-size: 1.2em; color: #34495e; margin-bottom: 20px; }
+
+/* Premium Buttons */
+button {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #2c3e50;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.8);
+    margin: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    outline: none;
+}
+
+/* Specific Section Styles */
+.scratch-container {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    margin: 20px auto;
+    box-shadow: 0px 10px 20px rgba(8, 113, 211, 0.15);
+    border-radius: 10px;
+}
+.scratch-container img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; display: block; }
+#scratchCanvas { position: absolute; top: 0; left: 0; cursor: pointer; border-radius: 10px; z-index: 10; }
+
+#cakeCanvas {
+    border: 5px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    cursor: default;
+    touch-action: none; 
+}
+
+#mic-status { font-size: 1.2em; font-weight: 600; color: #6600d3; margin-top: 15px; }
+
+.video-container {
+    max-width: 300px;
+    margin: 20px auto;
+    border: 8px solid rgba(100, 67, 198, 0.5);
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+.video-container video { width: 100%; height: auto; display: block; }
+.love-note { font-size: 1.3em; font-style: italic; color: #2c3e50; font-family: 'Playfair Display', serif; }
+/* Animated Canvas based scene design */
+#cakeCanvas {
+    border: 5px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.3); /* Glassmorphism background on canvas */
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    cursor: default;
+    touch-action: none; 
+}
+
+#mic-status {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #0090d3; /* Classy dark orange/red status */
+    margin-top: 15px;
+}
+/* --- Polaroid Gallery Design & Animation --- */
+.polaroid-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.polaroid {
+    background: #fff;
+    padding: 10px 10px 20px 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    width: 140px;
+    opacity: 0; /* Suruvatila lapavun thevle ahe */
+    transform: translateY(50px); /* Thode khali thevle ahe */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Thode tede (tilted) photos disnyasathi */
+.polaroid:nth-child(odd) { transform: translateY(50px) rotate(-4deg); }
+.polaroid:nth-child(even) { transform: translateY(50px) rotate(4deg); }
+
+/* Hover kelyavar photo motha hoil */
+.polaroid:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.polaroid .caption {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-top: 10px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* JS dware add keli janari Animation Class */
+.polaroid.show-anim:nth-child(odd) {
+    animation: slideUpFadeOdd 0.8s forwards;
+}
+.polaroid.show-anim:nth-child(even) {
+    animation: slideUpFadeEven 0.8s forwards;
+}
+
+@keyframes slideUpFadeOdd {
+    to { opacity: 1; transform: translateY(0) rotate(-4deg); }
+}
+@keyframes slideUpFadeEven {
+    to { opacity: 1; transform: translateY(0) rotate(4deg); }
+}

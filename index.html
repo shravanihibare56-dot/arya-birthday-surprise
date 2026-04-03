@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya's Birthday Journey 🌊</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="video/bg_video.mp4" type="video/mp4">
+    </video>
+
+    <audio id="bg-audio" loop>
+        <source src="video/bg_audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="main-container">
+
+        <div id="quest-section" class="active">
+    <h1 class="ocean-title">Arya's Birthday Journey</h1>
+    <p class="ocean-subtitle">"Are you ready?"</p>
+    
+    <div class="chest-area">
+        <img id="treasure-chest" src="image/chest_closed.png" alt="Treasure Chest" style="width: 250px; border-radius: 15px;">
+    </div>
+
+    <div id="q1">
+        <p><strong>puzzel १:</strong> I which standard I told you that I was considering you as my best friend?</p>
+        <input type="text" id="answer1" placeholder="name of place...">
+        <button onclick="checkAnswer1()">Next!</button>
+    </div>
+
+    <div id="q2" class="hidden">
+        <p><strong>puzzel २:</strong> What was the first gift I ever gave you(Except birthday card)?</p>
+        <input type="text" id="answer2" placeholder="write ans...">
+        <button onclick="checkAnswer2()">Next!</button>
+    </div>
+
+    <div id="q3" class="hidden">
+        <p><strong>puzzel ३:</strong> what was the first movie we watched together?</p>
+        <input type="text" id="answer3" placeholder="ans...">
+        <button onclick="checkAnswer3()">Next!</button>
+    </div>
+
+    <div id="q4" class="hidden">
+        <p><strong>puzzel ४:</strong> Where exactly did we have our first kiss ?</p>
+        <input type="text" id="answer4" placeholder="think...">
+        <button onclick="checkAnswer4()">Unlock!</button>
+    </div>
+</div>
+
+        <div id="scratch-section" class="hidden">
+            <h2> Pirate 🍾</h2>
+            <div class="scratch-container">
+                 <canvas id="scratchCanvas"></canvas>
+                 <img src="image/scratch_message.png" alt="Hidden">
+            </div>
+             <button onclick="showTimeline()" class="hidden" id="nextToTimeline"> Lets go!</button>
+        </div>
+        
+
+        <div id="timeline-section" class="hidden">
+            <h2>5 Years of Togetherness 💖</h2>
+            <p class="ocean-subtitle">लहानपणापासून ते आतापर्यंत...</p>
+            
+            <div id="timeline-gallery" class="polaroid-gallery">
+                <div class="polaroid">
+                    <img src="image/1000284068.jpg" alt="Memory 1">
+                    <div class="caption">The Beginning ✨</div>
+                </div>
+                <div class="polaroid">
+                    <img src="image/1000284071.jpg" alt="Memory 2">
+                    <div class="caption">Growing up together 🌻</div>
+                </div>
+                <div class="polaroid">
+                    <img src="image/1000284074.jpg" alt="Memory 3">
+                    <div class="caption">Crazy Memories 🤪</div>
+                </div>
+                <div class="polaroid">
+                    <img src="image/1000284077.jpg" alt="Memory 4">
+                    <div class="caption">5 Years & Counting ♾️</div>
+                </div>
+            </div>
+            
+            <button onclick="showCake()" class="hidden" id="nextToCake">Let's Celebrate! 🎂</button>
+        </div>
+
+        <div id="cake-section" class="hidden">
+            <h2>Corals ani Cake! 🌊🕯️✨</h2>
+            <div class="cake-container">
+                <canvas id="cakeCanvas"></canvas>
+            </div>
+             <p id="mic-status">Blow hard into your mic!</p>
+             <button onclick="showFinalVideo()" class="hidden" id="nextToVideo">Grand Finale! 🎁🎬</button>
+        </div>
+
+        <div id="video-section" class="hidden">
+            <h1 class="ocean-wishes">Happy 19th Birthday Arya! ❤️🎉</h1>
+            <div class="video-container">
+                <video id="bff-video" controls>
+                    <source src="video/bff_wishes.mp4" type="video/mp4">
+                    Tujha browser video support karat nahi.
+                </video>
+            </div>
+             <p class="love-note">He surprise tula aavdla asel! - Your Best Friend 🤗</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
